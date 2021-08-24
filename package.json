@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@aws-amplify/cli": "^5.3.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.24.1",
