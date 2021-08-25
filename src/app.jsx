@@ -14,7 +14,6 @@ function App() {
       <H1 className="display-1">
         Check Your Car
       </H1>
-
     </Page>
   );
 }
