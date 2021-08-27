@@ -1,15 +1,27 @@
 {
-  "main": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-checkyourcar-main-50943-authRole",
-      "UnauthRoleArn": "arn:aws:iam::067285635005:role/amplify-checkyourcar-main-50943-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::067285635005:role/amplify-checkyourcar-main-50943-authRole",
-      "Region": "ap-southeast-2",
-      "DeploymentBucketName": "amplify-checkyourcar-main-50943-deployment",
-      "UnauthRoleName": "amplify-checkyourcar-main-50943-unauthRole",
-      "StackName": "amplify-checkyourcar-main-50943",
-      "StackId": "arn:aws:cloudformation:ap-southeast-2:067285635005:stack/amplify-checkyourcar-main-50943/fdb335d0-06f4-11ec-a5d1-0a274af8037a",
-      "AmplifyAppId": "d1jmo5xiuhr78"
+    "main": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-checkyourcar-main-50943-authRole",
+            "UnauthRoleArn": "arn:aws:iam::067285635005:role/amplify-checkyourcar-main-50943-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::067285635005:role/amplify-checkyourcar-main-50943-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-checkyourcar-main-50943-deployment",
+            "UnauthRoleName": "amplify-checkyourcar-main-50943-unauthRole",
+            "StackName": "amplify-checkyourcar-main-50943",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:067285635005:stack/amplify-checkyourcar-main-50943/fdb335d0-06f4-11ec-a5d1-0a274af8037a",
+            "AmplifyAppId": "d1jmo5xiuhr78"
+        },
+        "categories": {
+            "auth": {
+                "cognito0977364f": {}
+            },
+            "notifications": {
+                "Pinpoint": {
+                    "Name": "CheckYourCarG0kRw-main",
+                    "Id": "f4f1fa6023b947d0b1630de2258d4e6b",
+                    "Region": "us-west-2"
+                }
+            }
+        }
     }
-  }
 }
