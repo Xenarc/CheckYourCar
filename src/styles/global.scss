@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+body
+{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background-color: transparent!important;
+}
+
+img{
+	width: 100%;
+	object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Lato', sans-serif;
+	letter-spacing: -0.025em;
+}

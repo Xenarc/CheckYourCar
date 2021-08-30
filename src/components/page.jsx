@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import theme from '../styles/theme';
 import Header from './header';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/global.css';
 import '../styles/reset.css';
+import '../styles/global.scss';
 
 const Root = styled.div`
-  width: 100%!important;
   background-color: ${theme.bodyBG};
 `;
 

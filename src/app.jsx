@@ -1,19 +1,40 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import theme from './styles/theme';
 import Page from './components/page';
+import HeroBG from './images/Car.jpg';
 
-const H1 = styled.h1`
-  color: ${theme.primary};
+const Signup = styled.div`
+  margin-top: 1em;
   text-align: center;
+`;
+
+const GetStartedText = styled.h3`
+  color: ${theme.light};
+  text-align: center;
+`;
+
+const Hero = styled.section`
+  padding-top: 25vh;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${HeroBG});
+  background-size: cover;
+  background-position: center center;
 `;
 
 function App() {
   return (
     <Page>
-      <H1 className="display-1">
-        Check Your Car
-      </H1>
+      <Hero>
+        <GetStartedText>
+          Get Started Today.
+        </GetStartedText>
+        <Signup>
+          <Button>Sign up</Button>
+        </Signup>
+      </Hero>
     </Page>
   );
 }
