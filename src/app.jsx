@@ -13,12 +13,14 @@ const Signup = styled.div`
 const GetStartedText = styled.h3`
   color: ${theme.light};
   text-align: center;
+  font-size: 1.8rem;
 `;
 
 const Hero = styled.section`
   padding-top: 25vh;
   width: 100vw;
   height: 100vh;
+  font-size: 1.8rem;
   background-image: url(${HeroBG});
   background-size: cover;
   background-position: center center;

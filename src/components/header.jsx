@@ -19,12 +19,13 @@ const Navigation = styled(Navbar)`
 const BrandH1 = styled.h1`
   color: ${theme.light};
   text-align: center;
+  font-size: 4rem;
 `;
 
 const BrandSubtitle = styled.h2`
   margin-top: -0.3em;
   color: ${theme.light};
-  font-size: 2.5rem;
+  font-size: 2rem;
 `;
 
 const Header = () => (
@@ -43,16 +44,9 @@ const Header = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          <Nav.Link href="/"><Button>Log in</Button></Nav.Link>
-          {/* <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/">Link</Nav.Link>
-          <NavDropdown title="Dropdown">
-            <NavDropdown.Item href="">Action</NavDropdown.Item>
-            <NavDropdown.Item href="">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="">Separated link</NavDropdown.Item>
-          </NavDropdown> */}
+          <Nav.Link href="/">
+            <Button>Log in</Button>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
