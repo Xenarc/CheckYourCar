@@ -29,3 +29,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### Making a Progressive Web App
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+# Getting started
+
+1. install node (and npm) here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
