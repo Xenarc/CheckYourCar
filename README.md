@@ -57,3 +57,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 2. run 'npm i'
 
 3. then start the server with 'npm start'
+
+## Committing a change to the GitHub repository:
+
+1. git add .
+
+2. git commit -m "MY COMMIT MESSAGE HERE"
+
+3. git push
