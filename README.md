@@ -30,7 +30,30 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-# Getting started
+## Getting started
 
 1. install node (and npm) here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
+2. restart vscode (if already open)
+
+3. open the vscode terminal and type 'npm' to ensure that you have npm installed correctly
+
+4. type: 'git clone https://github.com/Xenarc/CheckYourCar' to download this repository from github
+
+5. type 'cd ./CheckYourCar' to change into the directory of this repository
+
+6. type 'code .' to open the code in vscode
+
+7. in the terminal, type 'npm i' to download all of the packages
+
+8. next, type 'npm start' to start the development server.
+
+- the website should open up automatically.
+
+## Doing changes
+
+1. pull the latest repository from github by calling 'git pull' from the root project directory
+
+2. run 'npm i'
+
+3. then start the server with 'npm start'
