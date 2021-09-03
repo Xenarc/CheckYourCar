@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Button,
   Container, Nav, Navbar,
 } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import theme from '../styles/theme';
+import LogIn from './login';
 
 const Center = styled.div`
   text-align: center;
@@ -42,13 +42,9 @@ const Header = () => (
         </Center>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse className="justify-content-end">
-        <Nav>
-          <Nav.Link href="/">
-            <Button>Log in</Button>
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+      <Nav className="justify-content-end">
+        <LogIn />
+      </Nav>
     </Container>
   </Navigation>
 );
