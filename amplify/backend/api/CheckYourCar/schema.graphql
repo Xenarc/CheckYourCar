@@ -1,8 +1,9 @@
-type Issues @model @auth(rules: [{allow: public}]) @key(name: "byCar", fields: ["carID"]) {
+type Issues @model @auth(rules: [{allow: public}]) {
   id: ID!
   type: String
+  PRA: String
+  Car: Car @connection
   description: String
-  carID: ID
 }
 
 type Car @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
@@ -10,13 +11,12 @@ type Car @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["u
   make: String
   model: String
   year: Int
-  IssueID: [Issues] @connection(keyName: "byCar", fields: ["id"])
   userID: ID
 }
 
 type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   email: AWSEmail
-  userCars: [Car] @connection(keyName: "byUser", fields: ["id"])
+  Cars: [Car] @connection(keyName: "byUser", fields: ["id"])
 }
  

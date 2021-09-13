@@ -17,17 +17,30 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "description": {
-                    "name": "description",
+                "PRA": {
+                    "name": "PRA",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "carID": {
-                    "name": "carID",
+                "Car": {
+                    "name": "Car",
                     "isArray": false,
-                    "type": "ID",
+                    "type": {
+                        "model": "Car"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "issuesCarId"
+                    }
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -54,15 +67,6 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byCar",
-                        "fields": [
-                            "carID"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -112,20 +116,6 @@ export const schema = {
                     "type": "Int",
                     "isRequired": false,
                     "attributes": []
-                },
-                "IssueID": {
-                    "name": "IssueID",
-                    "isArray": true,
-                    "type": {
-                        "model": "Issues"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "carID"
-                    }
                 },
                 "userID": {
                     "name": "userID",
@@ -202,8 +192,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "userCars": {
-                    "name": "userCars",
+                "Cars": {
+                    "name": "Cars",
                     "isArray": true,
                     "type": {
                         "model": "Car"
@@ -261,5 +251,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "46807256eabf03b3226d673792647dfd"
+    "version": "945a75271ac9d0c7d6acd6fbef4ca5e1"
 };

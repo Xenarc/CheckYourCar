@@ -19,8 +19,9 @@ type UserMetaData = {
 export declare class Issues {
   readonly id: string;
   readonly type?: string;
+  readonly PRA?: string;
+  readonly Car?: Car;
   readonly description?: string;
-  readonly carID?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Issues, IssuesMetaData>);
@@ -32,7 +33,6 @@ export declare class Car {
   readonly make?: string;
   readonly model?: string;
   readonly year?: number;
-  readonly IssueID?: (Issues | null)[];
   readonly userID?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
@@ -43,7 +43,7 @@ export declare class Car {
 export declare class User {
   readonly id: string;
   readonly email?: string;
-  readonly userCars?: (Car | null)[];
+  readonly Cars?: (Car | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<User, UserMetaData>);

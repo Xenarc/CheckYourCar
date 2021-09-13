@@ -1,0 +1,16 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "Issues:@model(appsync)": [
+        "read"
+      ],
+      "Car:@model(appsync)": [
+        "read"
+      ],
+      "User:@model(appsync)": [
+        "read"
+      ]
+    }
+  }
+}

@@ -18,6 +18,14 @@ module.exports = {
   plugins: [
     'react',
   ],
+  overrides: [
+    {
+      files: ['*.js', '*.jsx'],
+      rules: {
+        '@typescript-eslint/*': 'off',
+      },
+    },
+  ],
   rules: {
     'react/prop-types': 'off',
     'linebreak-style': 0,
