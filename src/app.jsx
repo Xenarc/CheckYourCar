@@ -17,7 +17,7 @@ const GetStartedText = styled.h3`
 `;
 
 const Hero = styled.section`
-  padding-top: 25vh;
+  padding-top: 20vh;
   width: 100vw;
   height: 100vh;
   font-size: 1.8rem;
@@ -34,7 +34,7 @@ function App() {
           Get Started Today.
         </GetStartedText>
         <Signup>
-          <Button>Sign up</Button>
+          <Button disabled>Sign up</Button>
         </Signup>
       </Hero>
     </Page>

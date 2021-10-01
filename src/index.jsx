@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Amplify from 'aws-amplify';
-import Audit from './pages/audit-car';
+import Check from './pages/check-car';
 import App from './app';
 import awsconfig from './aws-exports';
 
@@ -13,7 +13,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/check-car/">
-          <Audit />
+          <Check />
         </Route>
         <Route path="/">
           <App />

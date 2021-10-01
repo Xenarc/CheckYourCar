@@ -15,7 +15,7 @@
       "auth": {
         "cognito0977364f": {},
         "checkyourcar8526736685267366": {},
-        "checkyourcard039f012d039f012": {}
+        "checkyourcar30b5e4c630b5e4c6": {}
       },
       "notifications": {
         "Pinpoint": {
@@ -27,7 +27,7 @@
       "function": {
         "checkyourcarb982988c": {
           "deploymentBucketName": "amplify-checkyourcar-main-50943-deployment",
-          "s3Key": "amplify-builds/checkyourcarb982988c-576e6e35556461344f34-build.zip"
+          "s3Key": "amplify-builds/checkyourcarb982988c-45694b79503256655333-build.zip"
         }
       }
     }

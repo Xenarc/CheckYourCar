@@ -12,6 +12,10 @@ type CarMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+type UserCarMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type UserMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -33,17 +37,27 @@ export declare class Car {
   readonly make?: string;
   readonly model?: string;
   readonly year?: number;
-  readonly userID?: string;
+  readonly users?: (UserCar | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Car, CarMetaData>);
   static copyOf(source: Car, mutator: (draft: MutableModel<Car, CarMetaData>) => MutableModel<Car, CarMetaData> | void): Car;
 }
 
+export declare class UserCar {
+  readonly id: string;
+  readonly user: User;
+  readonly car: Car;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<UserCar, UserCarMetaData>);
+  static copyOf(source: UserCar, mutator: (draft: MutableModel<UserCar, UserCarMetaData>) => MutableModel<UserCar, UserCarMetaData> | void): UserCar;
+}
+
 export declare class User {
   readonly id: string;
   readonly email?: string;
-  readonly Cars?: (Car | null)[];
+  readonly UserCars?: (UserCar | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<User, UserMetaData>);

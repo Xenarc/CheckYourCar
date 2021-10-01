@@ -8,56 +8,16 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "api key description"
+              "apiKeyExpirationDays": 365,
+              "description": ""
             }
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            },
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authcheckyourcard039f012d039f012"
-              }
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
     }
   },
-  "auth": {
-    "checkyourcard039f012d039f012": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false,
-      "frontendAuthConfig": {
-        "loginMechanisms": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "ADDRESS",
-          "EMAIL",
-          "NAME",
-          "PHONE_NUMBER"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_UPPERCASE",
-            "REQUIRES_NUMBERS"
-          ]
-        },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ]
-      }
-    }
-  },
+  "auth": {},
   "notifications": {
     "CheckYourCarG0kRw": {
       "service": "Pinpoint",

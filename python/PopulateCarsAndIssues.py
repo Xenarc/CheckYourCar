@@ -65,8 +65,8 @@ def SendGraphqlRequest(request):
     'Content-Type': "application/graphql",
     'x-api-key': APPSYNC_API_KEY,
   }
-  url = 'https://d47sv6jxljctvhursehgfq2d4a.appsync-api.ap-southeast-2.amazonaws.com/graphql'
-  r = requests.post(url, json={'query': request}, headers=headers, auth=auth)
+  
+  r = requests.post(APPSYNC_API_ENDPOINT_URL, json={'query': request}, headers=headers, auth=auth)
   if(r.status_code == 200):
     return r.json()['data']
   else:

@@ -117,12 +117,19 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "userID": {
-                    "name": "userID",
-                    "isArray": false,
-                    "type": "ID",
+                "users": {
+                    "name": "users",
+                    "isArray": true,
+                    "type": {
+                        "model": "UserCar"
+                    },
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "car"
+                    }
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -149,10 +156,101 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "UserCar": {
+            "name": "UserCar",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "user": {
+                    "name": "user",
+                    "isArray": false,
+                    "type": {
+                        "model": "User"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "userID"
+                    }
+                },
+                "car": {
+                    "name": "car",
+                    "isArray": false,
+                    "type": {
+                        "model": "Car"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "carID"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "UserCars",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {
+                        "queries": null
+                    }
+                },
+                {
                     "type": "key",
                     "properties": {
                         "name": "byUser",
                         "fields": [
+                            "userID",
+                            "carID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byCar",
+                        "fields": [
+                            "carID",
                             "userID"
                         ]
                     }
@@ -161,6 +259,15 @@ export const schema = {
                     "type": "auth",
                     "properties": {
                         "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            },
                             {
                                 "allow": "public",
                                 "operations": [
@@ -192,18 +299,18 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "Cars": {
-                    "name": "Cars",
+                "UserCars": {
+                    "name": "UserCars",
                     "isArray": true,
                     "type": {
-                        "model": "Car"
+                        "model": "UserCar"
                     },
                     "isRequired": false,
                     "attributes": [],
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": "userID"
+                        "associatedWith": "user"
                     }
                 },
                 "createdAt": {
@@ -251,5 +358,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "945a75271ac9d0c7d6acd6fbef4ca5e1"
+    "version": "6767dfef6c843005d27e7c8168903e4b"
 };

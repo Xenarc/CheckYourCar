@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import {
   Button,
@@ -39,55 +40,60 @@ const SignInForm = styled.form`
 
 const LogIn = () => {
   const [loginVisible, setLoginVisible] = useState(false);
-  useEffect(() => { console.log(loginVisible); }, [loginVisible]);
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div>
+      {loggedIn ? <Redirect to="/check-car/" /> : (
+        <Popup className="shadow-lg" hidden={!loginVisible}>
+          <Container>
+            <Button
+              className="close"
+              variant="danger"
+              onClick={() => setLoginVisible(false)}
+            >
+              &#10006;
+            </Button>
+            <SignInForm onSubmit={() => setLoggedIn(true)} name="sign-in-form">
+              <Center>
+                <h3 className="h3">Log In</h3>
+              </Center>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" required name="email" />
+                <Form.Text className="text-muted">
+                  We&apos;ll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" required name="password" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <div className="d-flex">
+                  <Form.Check type="checkbox" required name="privacy" />
+                &nbsp;&nbsp;
+                  <Form.Label style={{ marginBottom: 0 }}>Agree to our privacy policy</Form.Label>
+                </div>
+              </Form.Group>
+              <Center>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  name="login"
+                  onClick={() => {
+                    // setLoginVisible(false);
+                  }}
+                >
+                  Log In
+                </Button>
+              </Center>
+            </SignInForm>
+          </Container>
+        </Popup>
+      )}
       <Button onClick={() => setLoginVisible(true)}>
         Log In
       </Button>
-      <Popup className="shadow-lg" hidden={!loginVisible}>
-        <Container>
-          <Button
-            className="close"
-            variant="danger"
-            onClick={() => setLoginVisible(false)}
-          >
-            &#10006;
-          </Button>
-          <SignInForm>
-            <Center>
-              <h3 className="h3">Log In</h3>
-            </Center>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" required />
-              <Form.Text className="text-muted">
-                We&apos;ll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <div className="d-flex">
-                <Form.Check type="checkbox" required />
-                &nbsp;&nbsp;
-                <Form.Label style={{ marginBottom: 0 }}>Agree to our privacy policy</Form.Label>
-              </div>
-            </Form.Group>
-            <Center>
-              <Button
-                variant="primary"
-                type="submit"
-                onClick={() => setLoginVisible(false)}
-              >
-                Log In
-              </Button>
-            </Center>
-          </SignInForm>
-        </Container>
-      </Popup>
     </div>
   );
 };

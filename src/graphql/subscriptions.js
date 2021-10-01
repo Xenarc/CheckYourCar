@@ -6,26 +6,28 @@ export const onCreateIssues = /* GraphQL */ `
     onCreateIssues {
       id
       type
+      PRA
+      Car {
+        id
+        make
+        model
+        year
+        users {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       description
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      cars {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -34,26 +36,28 @@ export const onUpdateIssues = /* GraphQL */ `
     onUpdateIssues {
       id
       type
+      PRA
+      Car {
+        id
+        make
+        model
+        year
+        users {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       description
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      cars {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -62,26 +66,28 @@ export const onDeleteIssues = /* GraphQL */ `
     onDeleteIssues {
       id
       type
+      PRA
+      Car {
+        id
+        make
+        model
+        year
+        users {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       description
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      cars {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -92,25 +98,6 @@ export const onCreateCar = /* GraphQL */ `
       make
       model
       year
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      IssueID {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
       users {
         items {
           id
@@ -125,6 +112,11 @@ export const onCreateCar = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -135,25 +127,6 @@ export const onUpdateCar = /* GraphQL */ `
       make
       model
       year
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      IssueID {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
       users {
         items {
           id
@@ -168,6 +141,11 @@ export const onUpdateCar = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -178,25 +156,6 @@ export const onDeleteCar = /* GraphQL */ `
       make
       model
       year
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      IssueID {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
       users {
         items {
           id
@@ -211,6 +170,11 @@ export const onDeleteCar = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -219,12 +183,7 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser {
       id
       email
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      userCars {
+      UserCars {
         items {
           id
           userID
@@ -238,6 +197,11 @@ export const onCreateUser = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -246,12 +210,7 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser {
       id
       email
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      userCars {
+      UserCars {
         items {
           id
           userID
@@ -265,6 +224,11 @@ export const onUpdateUser = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -273,12 +237,7 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser {
       id
       email
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      userCars {
+      UserCars {
         items {
           id
           userID
@@ -292,147 +251,11 @@ export const onDeleteUser = /* GraphQL */ `
         nextToken
         startedAt
       }
-    }
-  }
-`;
-export const onCreateCarIssues = /* GraphQL */ `
-  subscription OnCreateCarIssues {
-    onCreateCarIssues {
-      id
-      carID
-      issuesID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      issues {
-        id
-        type
-        description
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        cars {
-          nextToken
-          startedAt
-        }
-      }
-      car {
-        id
-        make
-        model
-        year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
-        users {
-          nextToken
-          startedAt
-        }
-      }
-    }
-  }
-`;
-export const onUpdateCarIssues = /* GraphQL */ `
-  subscription OnUpdateCarIssues {
-    onUpdateCarIssues {
-      id
-      carID
-      issuesID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      issues {
-        id
-        type
-        description
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        cars {
-          nextToken
-          startedAt
-        }
-      }
-      car {
-        id
-        make
-        model
-        year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
-        users {
-          nextToken
-          startedAt
-        }
-      }
-    }
-  }
-`;
-export const onDeleteCarIssues = /* GraphQL */ `
-  subscription OnDeleteCarIssues {
-    onDeleteCarIssues {
-      id
-      carID
-      issuesID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      issues {
-        id
-        type
-        description
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        cars {
-          nextToken
-          startedAt
-        }
-      }
-      car {
-        id
-        make
-        model
-        year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
-        users {
-          nextToken
-          startedAt
-        }
-      }
     }
   }
 `;
@@ -442,43 +265,39 @@ export const onCreateUserCar = /* GraphQL */ `
       id
       userID
       carID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
+      user {
+        id
+        email
+        UserCars {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       car {
         id
         make
         model
         year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
         users {
           nextToken
           startedAt
         }
-      }
-      user {
-        id
-        email
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        userCars {
-          nextToken
-          startedAt
-        }
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -488,43 +307,39 @@ export const onUpdateUserCar = /* GraphQL */ `
       id
       userID
       carID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
+      user {
+        id
+        email
+        UserCars {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       car {
         id
         make
         model
         year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
         users {
           nextToken
           startedAt
         }
-      }
-      user {
-        id
-        email
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        userCars {
-          nextToken
-          startedAt
-        }
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -534,43 +349,39 @@ export const onDeleteUserCar = /* GraphQL */ `
       id
       userID
       carID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
+      user {
+        id
+        email
+        UserCars {
+          nextToken
+          startedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
       car {
         id
         make
         model
         year
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
         users {
           nextToken
           startedAt
         }
-      }
-      user {
-        id
-        email
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        userCars {
-          nextToken
-          startedAt
-        }
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;

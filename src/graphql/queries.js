@@ -1,60 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getIssues = /* GraphQL */ `
-  query GetIssues($id: ID!) {
-    getIssues(id: $id) {
-      id
-      type
-      description
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      cars {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const listIssues = /* GraphQL */ `
-  query ListIssues(
-    $filter: ModelIssuesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listIssues(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        type
-        description
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        cars {
-          nextToken
-          startedAt
-        }
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
 export const syncIssues = /* GraphQL */ `
   query SyncIssues(
     $filter: ModelIssuesFilterInput
@@ -71,90 +17,88 @@ export const syncIssues = /* GraphQL */ `
       items {
         id
         type
+        PRA
+        Car {
+          id
+          make
+          model
+          year
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         description
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        cars {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
     }
   }
 `;
-export const getCar = /* GraphQL */ `
-  query GetCar($id: ID!) {
-    getCar(id: $id) {
+export const getIssues = /* GraphQL */ `
+  query GetIssues($id: ID!) {
+    getIssues(id: $id) {
       id
-      make
-      model
-      year
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      IssueID {
-        items {
-          id
-          carID
-          issuesID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-      users {
-        items {
-          id
-          userID
-          carID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const listCars = /* GraphQL */ `
-  query ListCars(
-    $filter: ModelCarFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCars(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
+      type
+      PRA
+      Car {
         id
         make
         model
         year
+        users {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        IssueID {
-          nextToken
-          startedAt
+      }
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIssues = /* GraphQL */ `
+  query ListIssues(
+    $filter: ModelIssuesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIssues(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        type
+        PRA
+        Car {
+          id
+          make
+          model
+          year
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        users {
-          nextToken
-          startedAt
-        }
+        description
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
       }
       nextToken
       startedAt
@@ -179,36 +123,29 @@ export const syncCars = /* GraphQL */ `
         make
         model
         year
+        users {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        IssueID {
-          nextToken
-          startedAt
-        }
-        users {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
     }
   }
 `;
-export const getUser = /* GraphQL */ `
-  query GetUser($id: ID!) {
-    getUser(id: $id) {
+export const getCar = /* GraphQL */ `
+  query GetCar($id: ID!) {
+    getCar(id: $id) {
       id
-      email
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      userCars {
+      make
+      model
+      year
+      users {
         items {
           id
           userID
@@ -222,28 +159,35 @@ export const getUser = /* GraphQL */ `
         nextToken
         startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
+export const listCars = /* GraphQL */ `
+  query ListCars(
+    $filter: ModelCarFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCars(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        email
+        make
+        model
+        year
+        users {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        userCars {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
@@ -266,64 +210,67 @@ export const syncUsers = /* GraphQL */ `
       items {
         id
         email
+        UserCars {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        userCars {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
     }
   }
 `;
-export const syncCarIssues = /* GraphQL */ `
-  query SyncCarIssues(
-    $filter: ModelCarIssuesFilterInput
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
+      id
+      email
+      UserCars {
+        items {
+          id
+          userID
+          carID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
   ) {
-    syncCarIssues(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        carID
-        issuesID
+        email
+        UserCars {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
-        issues {
-          id
-          type
-          description
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        car {
-          id
-          make
-          model
-          year
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
       }
       nextToken
       startedAt
@@ -347,11 +294,15 @@ export const syncUserCars = /* GraphQL */ `
         id
         userID
         carID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+        user {
+          id
+          email
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         car {
           id
           make
@@ -363,15 +314,11 @@ export const syncUserCars = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        user {
-          id
-          email
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
       }
       nextToken
       startedAt
